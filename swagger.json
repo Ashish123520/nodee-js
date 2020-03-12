@@ -1,0 +1,682 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "SWAGGER ",
+      "description": "Yet Another Node.js Blogg Application API",
+      "license": {
+        "name": "ashish"
+      }
+    },
+    "host": "localhost:2321",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "Users",
+        "description": "API for users in the system"
+      }
+    ],
+    "schemes": [
+      "http",
+      "https"
+    ],
+
+
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/usersignup": {
+        "post": {
+          "tags": [
+            "Users"
+          ],
+          "description": "Create new user in system",
+          "parameters": [
+            {
+              "name": "user",
+              "in": "body",
+              "description": "User that we want to create",
+              "schema": {
+                "$ref": "#/definitions/usersignup"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            
+              
+            }
+          
+        }
+        },
+        "/userlogin": {
+            "post": {
+              "tags": [
+                "Users"
+              ],
+              "description": "Login new user in system",
+              "parameters": [
+                {
+                  "name": "user",
+                  "in": "body",
+                  "description": "User that we want to login",
+                  "schema": {
+                    "$ref": "#/definitions/usersignup"
+                  }
+                }
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "responses": {
+                
+                  
+                }
+              
+            }
+            },
+            "/userviewcatagories": {
+              "post": {
+                "tags": [
+                  "Users"
+                ],
+                "description": "VIEW CATAGORIES",
+                "parameters": [
+                  {
+                    "name": "CATAGORIES ID",
+                    "in": "body",
+                    "types":"string",
+                    "description": "CATAGORIES",
+                    "schema": {
+                      "$ref": "#/definitions/catagories"
+                    }
+                  },
+                  {
+                    "name":"auth-token",
+                    "required":"true",
+                    "in":"header"
+            
+            
+                  }
+                ],
+                "produces": [
+                  "application/json"
+                ],
+            "responses": {
+            
+              
+            }
+            }
+            },
+            "/adminsignup": {
+              "post": {
+                "tags": [
+                  "Admin"
+                ],
+                "description": "Create new admin in system",
+                "parameters": [
+                  {
+                    "name": "user",
+                    "in": "body",
+                    "description": "admin that we want to create",
+                    "schema": {
+                      "$ref": "#/definitions/adminsignup"
+                    }
+                  }
+                ],
+                "produces": [
+                  "application/json"
+                ],
+                "responses": {
+                  
+                    
+                  }
+                
+              }
+              },
+              "/adminlogin": {
+                  "post": {
+                    "tags": [
+                      "Admin"
+                    ],
+                    "description": "Login new admin in system",
+                    "parameters": [
+                      {
+                        "name": "user",
+                        "in": "body",
+                        "description": "admin that we want to login",
+                        "schema": {
+                          "$ref": "#/definitions/adminsignup"
+                        }
+                      }
+                    ],
+                    "produces": [
+                      "application/json"
+                    ],
+                    "responses": {
+                      
+                        
+                      }
+                    
+                  }
+                  },
+                  "/userviewproduct": {
+                    "post": {
+                      "tags": [
+                        "Users"
+                      ],
+                      "description": "VIEW PROODUCT",
+                      "parameters": [
+                        {
+                          "name": "PRODUCT",
+                          "in": "body",
+                          "types":"string",
+                          "description": "VIEW PRODUCT",
+                          "schema": {
+                            "$ref": "#/definitions/product"
+                          }
+                        },
+                        {
+                          "name":"auth-token",
+                          "in":"header"
+                  
+                  
+                        }
+                      ],
+                      "produces": [
+                        "application/json"
+                      ],
+                  "responses": {
+                  
+                    
+                  }
+                  }
+                  },
+        "/addcart": {
+            "post": {
+              "tags": [
+                "Users"
+              ],
+              "description": "ADD CART",
+              "parameters": [
+                {
+                  "name": "cart",
+                  "in": "body",
+                  "description": "ADD CART",
+                  "schema": {
+                    "$ref": "#/definitions/cart"
+                   
+                  }
+                },
+                {
+
+                  "name":"auth-token",
+                  "required":"true",
+                   "in":"header"
+                }
+              ],
+ 
+              "produces": [
+                "application/json"
+              ],
+          "responses": {
+          }
+        } 
+      },
+      "/updatecart": {
+        "post": {
+          "tags": [
+            "Users"
+          ],
+          "description": "UPDATE CART",
+          "parameters": [
+            {
+              "name": "CART",
+              "in": "body",
+              "description": "UPDATE CART",
+              "schema": {
+                "$ref": "#/definitions/cart"
+               
+              }
+            },
+            {
+
+              "name":"auth-token",
+              "required":"true",
+               "in":"header"
+            }
+          ],
+
+          "produces": [
+            "application/json"
+          ],
+      "responses": {
+      }
+    } 
+  },
+      "/viewcart": {
+        "post": {
+          "tags": [
+            "Users"
+          ],
+          "description": "VIEW CART",
+          "parameters": [
+            {
+              "name": "CART",
+              "in": "body",
+              "types":"string",
+              "description": "VIEW CART",
+              "schema": {
+                "$ref": "#/definitions/cart"
+              }
+            },
+            {
+              "name":"auth-token",
+              "required":"true",
+              "in":"header"
+
+
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+      "responses": {
+   
+        
+      }
+    }
+  },
+  "/addproduct": {
+    "post": {
+      "tags": [
+        "Admin"
+      ],
+      "parameters": [
+        {
+          "name": "name",
+          "in": "formData",
+          "type":"string",
+          "description": "NAME",
+          "schema": {
+            "$ref": "#/definitions/product"
+           
+          }
+        },
+        {
+        "name": "price",
+        "in": "formData",
+        "type":"string",
+          "description": "PRICE",
+          "schema": {
+            "$ref": "#/definitions/product"
+          }
+        },
+        {
+          "name": "title",
+          "in": "formData",
+          "type":"string",
+            "description": "TITLE",
+            "schema": {
+              "$ref": "#/definitions/product"
+            }
+          },
+          {
+            "name": "image",
+            "in": "formData",
+            "type":"file",
+              "description": "IMAGE",
+              "schema": {
+                "$ref": "#/definitions/product"
+              }
+            },
+            {
+              "name": "quantity",
+              "in": "formData",
+              "type":"string",
+                "description": "QUANTITY",
+                "schema": {
+                  "$ref": "#/definitions/product"
+                }
+              },
+              {
+                "name": "description",
+                "in": "formData",
+                "type":"string",
+                  "description": "DESCRIPTION",
+                  "schema": {
+                    "$ref": "#/definitions/product"
+                  }
+                },
+                {
+                  "name": "catagories_id",
+                  "in": "formData",
+                  "type":"string",
+                    "description": "catogoriesId",
+                    "schema": {
+                      "$ref": "#/definitions/product"
+                    }
+                  },
+                 
+           
+        {
+
+          "name":"auth-token",
+          "required":"true",
+           "in":"header"
+        }
+        
+      ],
+
+      "produces": [
+        "application/json"
+       
+      ],
+  "responses": {
+  }
+} 
+},
+"/viewproduct": {
+  "post": {
+    "tags": [
+      "Admin"
+    ],
+    "description": "VIEW PROODUCT",
+    "parameters": [
+      {
+        "name": "PRODUCT",
+        "in": "body",
+        "types":"string",
+        "description": "VIEW PRODUCT",
+        "schema": {
+          "$ref": "#/definitions/product"
+        }
+      },
+      {
+        "name":"auth-token",
+        "required":"true",
+        "in":"header"
+
+
+      }
+    ],
+    "produces": [
+      "application/json"
+    ],
+"responses": {
+
+  
+}
+}
+},
+"/addcatagories": {
+  "post": {
+    "tags": [
+      "Admin"
+    ],
+    "description": "ADD CATAGORIES",
+    "parameters": [
+      {
+        "name": "CATAGORIES",
+        "in": "body",
+        "description": "CATAGORIES",
+        "schema": {
+          "$ref": "#/definitions/catagories"
+        }
+      },
+      {
+        "name":"auth-token",
+        "required":"true",
+        "in":"header"
+
+
+      }
+    ],
+    "produces": [
+      "application/json"
+    ],
+"responses": {
+
+  
+}
+}
+},
+"/viewamincatagories": {
+  "post": {
+    "tags": [
+      "Admin"
+    ],
+    "description": "VIEW CATAGORIES",
+    "parameters": [
+      {
+        "name": "CATAGORIES",
+        "in": "body",
+        "types":"string",
+        "description": "CATAGORIES",
+        "schema": {
+          "$ref": "#/definitions/catagories"
+        }
+      },
+      {
+        "name":"auth-token",
+        "required":"true",
+        "in":"header"
+
+
+      }
+    ],
+    "produces": [
+      "application/json"
+    ],
+"responses": {
+
+  
+}
+}
+},
+
+"/updateproduct": {
+  "post": {
+    "tags": [
+      "Admin"
+    ],
+    "description": "UPDATE PRODUCT",
+    "parameters": [
+      {
+        "name": "PRODUCT",
+        "in": "body",
+        "description": "PRODUCT",
+        "schema": {
+          "$ref": "#/definitions/product"
+         
+        }
+      },
+      {
+
+        "name":"auth-token",
+        "required":"true",
+         "in":"header"
+      }
+    ],
+
+    "produces": [
+      "application/json"
+    ],
+"responses": {
+}
+} 
+}
+  
+},
+
+    "definitions": {
+      "usersignup": {
+        "required": [
+          "email",
+          
+          "first_name",
+          "phone_number"
+        ],
+        "properties": {
+        
+          "email": {
+            "type": "string",
+            "unique":"true"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "phone_number": {
+            "type": "string"
+          },
+          "password":{
+            "type":"string"
+            
+        },
+    
+        "Status":
+{
+    "type":"string",
+    "enum":"['active','inactive','delete']",
+    "default":"active"
+}
+
+  }
+      },
+      "adminsignup": {
+        "required": [
+          "email"
+        
+        ],
+        "properties": {
+        
+          "email": {
+            "type": "string"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "phone_number": {
+            "type": "string"
+          },
+          "password":{
+            "type":"string"
+            
+        },
+    
+        "Status":
+{
+    "type":"string",
+    "enum":"['active','inactive','delete']",
+    "default":"active"
+}
+        }
+
+  },
+  "catagories": {
+    "required": [
+      "catagories"
+
+    ],
+    "properties": 
+    {
+      "catagories": {
+        "type": "string",
+        "lowercase": "true",
+        "uppercase":"true",
+        "unique":"true"
+    
+      },
+      "product":[{
+
+
+        "type":"Schema.Types.ObjectId, ref: 'Product'"
+    
+    }],
+    
+"Status":
+{
+"type":"string",
+"enum":"['active','inactive','delete']",
+"default":"active"
+}
+}
+},
+      "cart": {
+        "required": [
+          "catagories"
+  
+        ],
+        "properties": 
+        {
+          "user": {
+            "type": "Schema.Types.ObjectId"
+        
+          },
+          "quantity":
+    {
+           "type":"number"
+
+    },
+    "totalprice":{
+                 
+        "type":"string"
+
+    },
+          "product":[{
+
+
+            "type":"Schema.Types.ObjectId, ref: 'Product'"
+        
+        }],
+        
+"Status":
+{
+    "type":"string",
+    "enum":"['active','inactive','delete']",
+    "default":"active"
+}
+}
+},
+      "product": {
+        "properties": {
+           
+            "name":
+            {
+            "type":"string",
+            "trim": "true",
+            "lowercase": "true"
+            
+            },
+            "title":{
+                "type":"string"
+            },
+            "discription":{
+                "type":"string"
+            },
+            "quantity":{
+              "type":"number"
+          },
+            "image":[{
+            
+                "type":"string"
+            
+            }],
+            
+"Status":
+{
+    "type":"string",
+    "enum":"['active','inactive','delete']",
+    "default":"active"
+}
+      }
+      }
+
+      
+    }
+  }
